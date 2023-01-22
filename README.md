@@ -88,7 +88,7 @@ Then install the requirements with `conda install --name myenv --file requiremen
 
 ## Usage
 
-The Jupyter notebook []() will provide all steps of the data collection, preparation, and analysis. Data visualizations are shown inline and accompanying analysis responses are provided.
+The Jupyter notebook [machine_learning_trading_bot.ipynb](./machine_learning_trading_bot.ipynb) will provide all steps of the data collection, preparation, and analysis. Data visualizations are shown inline and accompanying analysis responses are provided.
 
 ---
 
