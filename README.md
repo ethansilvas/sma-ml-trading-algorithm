@@ -32,18 +32,31 @@ I compare each of these models to look at how different models and hyperparamete
 
 ### Baseline SVC Model 
 
-![](./Plots/baseline_returns_plot.png)
+* Strategy final cumulative return - 1.520
+* Actual final cumulative return - 1.389
+* Accuracy - 0.55
+
+![Line plot showing baseline SVC cumulative returns](./Plots/baseline_returns_plot.png)
 
 ### Hyperparameter-Tuned Baseline SVC Model
 
-![](./Plots/tuned_baseline_returns_plot.png)
+* Strategy final cumulative return - 2.018
+* Accuracy - 0.56
+
+![Line plot showing hyperparameter-tuned SVC cumulative returns](./Plots/tuned_baseline_returns_plot.png)
 
 ### KNN Classifier Model (Baseline Hyperparameters)
 
-![](./Plots/knc_returns_plot.png)
+* Strategy final cumulative return - 1.750
+* Accuracy - 0.52
+
+![Line plot showing baseline KNN classifier cumulative returns](./Plots/knc_returns_plot.png)
 
 ## Summary
 
+When coming up with these results I found that hyperparameter tunings and model changes each had their own "sweetspots" where even the slight deviations from those sweetspots could result in drastically worse results. Using different DateOffsets() like 6-7 months of training data seemed to be the only positive changes whereas anything above or below would result in poor cumulative returns. Changing the fast and slow SMA values had a bit more room to experiment with since you could use short values of 1, 3, 4, or 6 and long values of 90, 120, 140, or 150. Changing these values would normally improve upon the final baseline SVC cumulative return of 1.520, and the highest I was able to get that value to was 2.018 with a fast SMA of 4, long SMA of 150, and 6-months of training data. The hyperparameter tuned SVC would for the most part be a better model than the baseline one because it has a lower worst-case return and a much higher best-case return. The only downside being that it spends much of its time being either equal or below the actual returns, which is offset by the final span of upward trending returns. 
+
+Using different models with the baseline hyperparameters can also provide mostly worse results or results that don't do notably better than the actual returns. However, K nearest neighbors classifier and K nearest centroid both provided decent cumulative returns. The KNN classifier had a better final cumulative return so I stuck with that one, but both got around a 1.6-1.7 final cumulative return. Although the final cumulative return is not better than the hyperparameter-tuned SVC, it is worth noting that the highest return that it had was 2.29. This can be offset by the lowest possible return of 0.92 compared to the hyperparameter-tuned SVC having a low of 0.966. It is also worth mentioning that the KNN classifier ends in a downward trend while the hyperparameter-tuned SVC ends with a very long upward trend. The accuracy values were generally close with the KNN classifier at 0.52 and the hyperparameter-tuned SVC at 0.56, however the hyperparameter-tuned SVC had a horrible f1-score for predicting exit signals at 0.06, while the KNN classifier had 0.38. Recall or precision may or may not be as important since all of the good models I experimented with could only reach around a 0.5 accuracy anyway. Further experimenting with the KNN classifier's hyperparameters could be explored for potentially higher cumulative returns. 
 
 ---
 
