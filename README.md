@@ -32,9 +32,15 @@ I compare each of these models to look at how different models and hyperparamete
 
 ### Baseline SVC Model 
 
+![](./Plots/baseline_returns_plot.png)
+
 ### Hyperparameter-Tuned Baseline SVC Model
 
+![](./Plots/tuned_baseline_returns_plot.png)
+
 ### KNN Classifier Model (Baseline Hyperparameters)
+
+![](./Plots/knc_returns_plot.png)
 
 ## Summary
 
@@ -43,7 +49,7 @@ I compare each of these models to look at how different models and hyperparamete
 
 ## Technologies
 
-This is a Python 3.8 project ran in Google Colab but can be used in JupyterLab using a Conda dev environment. 
+This is a Python 3.7 project ran in Google Colab but can be used in JupyterLab using a Conda dev environment. 
 
 The following dependencies are used: 
 1. [Jupyter](https://jupyter.org/) - Running code 
