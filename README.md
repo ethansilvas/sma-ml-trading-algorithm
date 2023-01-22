@@ -1,13 +1,40 @@
 # SMA Machine Learning Algorithmic Trading - UW Fintech Bootcamp Module 14 Challenge
 
+In this project I combine the Dual Moving Average Crossover (DMAC) trading strategy with machine learning models to create a trading algorithm that predicts trade entry/exit signals using two Simple Moving Averages (SMA). 
+
 ### Data Used
+[emergin_markets_ohlcv.csv](./Resources/emerging_markets_ohlcv.csv) - OHLCV data for an MSCI–based emerging markets ETF
 
 ---
 
 ## Overview of the Analysis
 
+This analysis compares three different machine learning models that are trained using two features, which are the dual SMAs, and try to predict the entry/exit positions to attempt to create a profitable trading algorithm. Using the OHLCV data, I generate metrics like the fast and slow SMAs, the trading signal, and the strategy returns if we had simply bought and sold based on positive and negative daily return values. 
+
+![DataFrame showing closing price, actual daily returns, SMA_Fast, SMA_Slow, trading signal, and strategy returns](./Resources/Images/original_data.png)
+
+Then, I create a feature set out of the two SMAs and use the trading signals as the labels. I then split the data into training and testing sets based on a DateOffset() value and then scale the training sets using scikit-learn's StandardScaler(). 
+
+With this format of data I then create the three different models: 
+1. Baseline SVC (Support Vector Classifier) model with the following hyperparameters: 
+    * 4-day fast SMA 
+    * 100-day long SMA 
+    * 3 month DateOffset() value meaning 3 months of training data
+2. Hyperparameter-tuned SVC model: 
+    * 4-day fast SMA 
+    * 150-day long SMA 
+    * 6 month DateOffset()
+3. KNN (K Nearest Neighbors) Classifier model with baseline hyperparameters
+
+I compare each of these models to look at how different models and hyperparameters change the resulting cumulative return, accuracy, and f1-scores values. 
+
 ## Results
 
+### Baseline SVC Model 
+
+### Hyperparameter-Tuned Baseline SVC Model
+
+### KNN Classifier Model (Baseline Hyperparameters)
 
 ## Summary
 
