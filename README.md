@@ -1,4 +1,4 @@
-# SMA Machine Learning Algorithmic Trading - UW Fintech Bootcamp Module 14 Challenge
+# SMA Algorithmic Trading Model - UW Fintech Bootcamp Module 14 Challenge
 
 In this project I combine the Dual Moving Average Crossover (DMAC) trading strategy with machine learning models to create a trading algorithm that predicts trade entry/exit signals using two Simple Moving Averages (SMA). 
 
