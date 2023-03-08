@@ -1,4 +1,4 @@
-# SMA Algorithmic Trading Model - UW Fintech Module 14 Challenge (Machine Learning Trading Bot)
+# SMA Algorithmic Trading Model - UW FinTech Machine Learning Trading Bot Challenge
 
 In this project I combine the Dual Moving Average Crossover (DMAC) trading strategy with machine learning models to create a trading algorithm that predicts trade entry/exit signals using two Simple Moving Averages (SMA). 
 
